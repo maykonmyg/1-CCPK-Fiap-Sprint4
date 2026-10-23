@@ -1,7 +1,6 @@
 # LightWeek — Sprint 4
 
 Continuação da Sprint 3 de Data Structures and Algorithms, turma 1CCPK.
-O código original de `sistema_recarga.py` foi preservado. A nova interface Web usa suas funções Python.
 
 ## Como abrir
 
@@ -29,17 +28,3 @@ O armazenamento é em memória e se perde ao encerrar/reiniciar o servidor. A ap
 Os testes originais e os testes adicionais do backend foram executados. A comunicação HTTP no navegador e a aparência final NÃO foram verificadas neste ambiente: a conexão local foi bloqueada e a execução fora do isolamento foi recusada. O vídeo NÃO foi produzido. O roteiro é uma preparação para a gravação, não uma evidência de gravação já realizada.
 
 Para testar: `python -m unittest discover -s tests -v`.
-
-## Entrega ao professor
-
-Exclusivamente o link de um vídeo de 5 a 8 minutos no YouTube, Público ou Não listado. Acrescentar a narração dos integrantes antes da publicação. Todos devem explicar pelo menos uma parte técnica. Testar o link em janela anônima e manter acessível até o fim da avaliação.
-
-## Equipe informada no README anterior
-
-- Maykon de Lima Silva — RM 574022
-- Felipe Pereira Restivo — RM 570712
-- Gabriel Rodrigues Zappelloni — RM 572060
-- Rodger Costa Rios — RM 571438
-- Kenichi Caio Yamamoto — RM 569815
-
-Confiram os dados antes da gravação. O histórico das Sprints 1 e 2 não foi fornecido; não foram inventados detalhes dessas etapas.
