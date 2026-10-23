@@ -1,0 +1,334 @@
+Sprint 4 — Demonstração e Defesa Técnica do Sistema de Recarga
+
+Objetivo
+
+Finalizar o projeto desenvolvido durante o semestre por meio de uma demonstração prática e defesa técnica em vídeo, comprovando o funcionamento do sistema e o domínio dos conceitos de Python, estruturas de dados, busca, ordenação e análise de complexidade utilizados no projeto.
+
+O sistema deverá utilizar Python no backend.
+
+A forma de interação com o sistema poderá ser escolhida pelo grupo, podendo utilizar:
+
+interface Web;
+interface Mobile;
+outra interface gráfica compatível com o projeto.
+
+A escolha da tecnologia utilizada para a interface é livre. Entretanto, as funcionalidades principais, regras de negócio, manipulação dos dados e algoritmos avaliados nesta Sprint deverão estar implementados em Python.
+
+
+
+Entrega Obrigatória
+
+O grupo deverá produzir um vídeo técnico de 5 a 8 minutos e publicá-lo no YouTube.
+
+Formato de entrega no portal
+
+Deverá ser entregue exclusivamente o link do vídeo publicado no YouTube.
+
+O vídeo poderá estar configurado como:
+
+Público; ou
+Não listado.
+
+Não utilizar a opção Privado, pois o professor precisa conseguir acessar o vídeo diretamente pelo link.
+
+Antes da entrega, o grupo deverá testar o link em uma janela anônima do navegador para verificar se o vídeo está acessível sem solicitar autorização.
+
+
+
+Conteúdo obrigatório do vídeo
+
+1. Identificação do grupo
+
+No início do vídeo deverão ser apresentados:
+
+Nome da disciplina;
+Turma;
+Nome completo dos integrantes;
+RM dos integrantes;
+Nome do projeto.
+
+
+
+2. Apresentação do problema
+
+Explicar brevemente:
+
+qual problema o sistema busca resolver;
+como funciona o sistema de gerenciamento/simulação de recargas;
+como o projeto evoluiu durante as Sprints;
+qual solução de interface foi adotada pelo grupo.
+
+Não é necessário detalhar a tecnologia de interface neste momento. Basta apresentar brevemente como o usuário interage com o sistema.
+
+
+
+3. Demonstração do sistema
+
+O sistema deverá ser realmente executado durante o vídeo.
+
+A demonstração deverá apresentar, no mínimo:
+
+cadastro ou início de uma sessão de recarga;
+armazenamento de múltiplas sessões;
+listagem das sessões;
+busca de uma sessão;
+ordenação das sessões;
+apresentação de estatísticas;
+cálculo da tarifação;
+relatório ou resumo final.
+
+A demonstração deverá utilizar a interface desenvolvida pelo grupo, seja ela Web ou Mobile.
+
+Durante a demonstração, deverá ficar evidente que a interface está integrada ao backend desenvolvido em Python.
+
+Não será suficiente apresentar apenas slides, imagens, protótipos de tela ou trechos de código sem executar o sistema.
+
+
+
+4. Estrutura dos dados em Python
+
+O grupo deverá mostrar no código Python como uma sessão de recarga é representada e armazenada.
+
+Poderão ser utilizadas, conforme a arquitetura escolhida:
+
+classes;
+objetos;
+dicionários;
+listas;
+tuplas;
+dataclass;
+outras estruturas adequadas em Python.
+
+O grupo deverá explicar:
+
+o que a estrutura escolhida representa;
+quais informações de uma sessão são armazenadas;
+por que essa estrutura foi escolhida;
+como múltiplas sessões são armazenadas e manipuladas;
+como os dados percorrem o sistema entre a interface e o backend.
+
+Não é obrigatório utilizar uma estrutura específica. A escolha deverá ser coerente com a solução desenvolvida e explicada pelo grupo.
+
+
+
+5. Explicação do algoritmo de busca
+
+O grupo deverá mostrar no código Python o trecho responsável pela busca de sessões.
+
+Deverá explicar:
+
+qual informação é utilizada como chave ou condição de busca;
+como o algoritmo percorre ou localiza os dados;
+em quais condições a busca termina;
+quantidade aproximada de operações conforme aumenta a quantidade de sessões;
+complexidade computacional utilizando notação Big-O.
+
+A análise deverá estar relacionada ao algoritmo efetivamente utilizado pelo grupo.
+
+Por exemplo, se foi implementada uma busca linear, o grupo deverá explicar por que seu comportamento é O(n).
+
+Caso utilize outra estratégia, deverá explicar a estrutura necessária e sua respectiva complexidade.
+
+
+
+6. Explicação do algoritmo de ordenação
+
+O grupo deverá mostrar no código Python o algoritmo utilizado para ordenar as sessões.
+
+Deverá explicar:
+
+qual campo é utilizado para ordenação;
+como os elementos são comparados;
+como ocorre a reorganização dos elementos;
+qual algoritmo foi utilizado;
+complexidade Big-O do algoritmo.
+
+O grupo deverá demonstrar a ordenação funcionando com diferentes registros.
+
+Importante
+
+Para fins de avaliação de Estruturas de Dados e Algoritmos, o grupo deverá implementar pelo menos um algoritmo de ordenação estudado na disciplina, como:
+
+Bubble Sort;
+Insertion Sort;
+Selection Sort;
+Merge Sort;
+Quick Sort.
+
+Não será suficiente utilizar exclusivamente:
+
+lista.sort()
+
+
+ou:
+
+sorted(lista)
+
+
+O grupo poderá utilizar os recursos nativos de ordenação do Python em outras partes do sistema, mas deverá existir pelo menos uma implementação própria de algoritmo de ordenação para demonstração e análise.
+
+
+
+7. Análise de complexidade
+
+O grupo deverá responder durante o vídeo:
+
+O que acontece com o número de operações quando a quantidade de sessões armazenadas aumenta?
+
+A resposta deverá estar relacionada aos algoritmos realmente implementados no projeto.
+
+O grupo deverá identificar e explicar, quando aplicável:
+
+O(1) — tempo constante;
+O(log n) — tempo logarítmico;
+O(n) — tempo linear;
+O(n log n) — comportamento típico de algoritmos eficientes de ordenação;
+O(n²) — comportamento quadrático.
+
+Não será suficiente apenas informar a notação.
+
+O grupo deverá relacioná-la ao comportamento do próprio código.
+
+Por exemplo:
+
+“Nossa busca percorre a lista de sessões até encontrar o identificador procurado. No pior caso, poderá percorrer todas as n sessões. Portanto, sua complexidade é O(n).”
+
+
+
+8. Integração entre backend e interface
+
+O grupo deverá apresentar brevemente como a interface escolhida se comunica com o código Python.
+
+Deverá ser possível identificar:
+
+Interface ? Backend Python ? Processamento dos dados ? Resultado ? Interface
+
+Não é necessário realizar uma explicação aprofundada do framework ou tecnologia utilizada.
+
+O foco da avaliação permanece no processamento realizado pelo backend, nas estruturas de dados e nos algoritmos desenvolvidos.
+
+
+
+9. Considerações finais
+
+Apresentar pelo menos duas possíveis evoluções futuras para o sistema.
+
+Exemplos:
+
+persistência em banco de dados;
+autenticação de usuários;
+aplicativo Mobile;
+dashboard Web;
+múltiplas estações de recarga;
+tarifação dinâmica;
+histórico de usuários;
+geração de relatórios;
+integração com carregadores reais;
+API para comunicação com outros sistemas;
+análise de dados das sessões de recarga.
+
+As evoluções apresentadas não precisam ser implementadas nesta Sprint.
+
+
+
+Participação do Grupo
+
+Todos os integrantes deverão participar da apresentação.
+
+A participação poderá ocorrer por:
+
+apresentação em vídeo;
+narração;
+explicação do código;
+demonstração da interface;
+explicação dos algoritmos;
+análise de complexidade.
+
+O objetivo é permitir verificar a participação e compreensão dos integrantes sobre o projeto desenvolvido.
+
+Cada integrante deverá participar de pelo menos uma parte técnica da apresentação.
+
+
+
+Entregável
+
+No portal deverá ser enviado:
+
+Link do vídeo no YouTube
+
+Exemplo:
+
+https://www.youtube.com/watch?v=XXXXXXXXXXX
+
+O vídeo deverá estar acessível como Público ou Não listado até o término do período de avaliação.
+
+
+
+Critérios de Avaliação — Sprint 4 (0–100)
+
+Critério
+
+Pontuação
+
+Demonstração funcional e integração interface/backend
+
+25
+
+Explicação do código Python desenvolvido
+
+15
+
+Estruturas de dados e armazenamento das sessões
+
+15
+
+Algoritmos de busca e ordenação
+
+20
+
+Análise de complexidade Big-O
+
+15
+
+Clareza, organização e participação do grupo
+
+10
+
+TOTAL
+
+100
+
+
+
+Atenção
+
+O vídeo deverá demonstrar o sistema realmente sendo executado.
+
+A interface poderá ser Web ou Mobile, conforme decisão do grupo, mas o backend deverá obrigatoriamente utilizar Python.
+
+A escolha de frameworks, bibliotecas e tecnologias de interface é livre e não constitui, por si só, critério de maior pontuação.
+
+O objetivo não é avaliar qual grupo utilizou o framework mais sofisticado, mas verificar se o grupo consegue desenvolver, executar e explicar corretamente:
+
+a estrutura dos dados;
+o armazenamento das sessões;
+os algoritmos de busca;
+os algoritmos de ordenação;
+as operações realizadas pelo backend;
+a complexidade computacional.
+
+O uso de bibliotecas e frameworks é permitido, porém não substitui a implementação dos algoritmos exigidos para avaliação.
+
+Vídeos contendo somente slides, leitura de documentação, protótipos ou apresentação conceitual, sem demonstração do sistema em funcionamento, não atenderão integralmente aos requisitos da Sprint.
+
+Links privados, indisponíveis ou que exijam autorização de acesso serão considerados como entrega não acessível até que o problema seja regularizado dentro do prazo estabelecido.
+
+
+
+Resultado esperado
+
+Ao final da Sprint 4, o grupo deverá demonstrar que desenvolveu um sistema funcional de gerenciamento de sessões de recarga, utilizando:
+
+Interface Web ou Mobile ? Backend Python ? Estruturas de Dados ? Algoritmos ? Resultados
+
+Mais do que demonstrar que o sistema funciona, o grupo deverá comprovar que compreende o código desenvolvido, as estruturas de dados utilizadas, os algoritmos implementados e suas respectivas complexidades computacionais.

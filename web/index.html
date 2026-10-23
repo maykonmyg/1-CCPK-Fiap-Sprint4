@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>LightWeek · Sprint 4</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <aside>
+      <div class="brand">ϟ <span>LightWeek</span></div>
+      <p class="muted">GESTÃO DE RECARGAS</p>
+      <nav>
+        <button data-tab="inicio" class="active">01 · Projeto</button
+        ><button data-tab="painel">02 · Estação</button
+        ><button data-tab="codigo">03 · Código Python</button
+        ><button data-tab="analise">04 · Complexidade</button
+        ><button data-tab="futuro">05 · Evolução</button>
+      </nav>
+      <div class="aside-bottom">
+        <span class="dot"></span> Backend Python local<br /><small
+          >Sprint 4 · 1CCPK</small
+        >
+      </div>
+    </aside>
+    <main>
+      <header>
+        <span>DATA STRUCTURES AND ALGORITHMS</span
+        ><span id="connection">Conectando…</span>
+      </header>
+      <section id="inicio" class="page">
+        <p class="eyebrow">SPRINT 4 / DEMONSTRAÇÃO TÉCNICA</p>
+        <h1>Da recarga isolada<br />à gestão de sessões.</h1>
+        <p class="lead">
+          LightWeek organiza sessões de recarga, calcula custos e transforma
+          registros em informações para a estação.
+        </p>
+        <div class="grid two">
+          <article>
+            <h2>Uma evolução do mesmo projeto</h2>
+            <p>
+              <strong>Base anterior:</strong> simulador de recarga descrito na
+              documentação da Sprint 3.
+            </p>
+            <p>
+              <strong>Sprint 3:</strong> múltiplas sessões, busca, Insertion
+              Sort e estatísticas pelo terminal.
+            </p>
+            <p>
+              <strong>Sprint 4:</strong> interface Web conectada ao Python e
+              defesa técnica do sistema.
+            </p>
+          </article>
+          <article>
+            <h2>Equipe · Turma 1CCPK</h2>
+            <ul class="team">
+              <li>Maykon de Lima Silva <b>574022</b></li>
+              <li>Felipe Pereira Restivo <b>570712</b></li>
+              <li>Gabriel Rodrigues Zappelloni <b>572060</b></li>
+              <li>Rodger Costa Rios <b>571438</b></li>
+              <li>Kenichi Caio Yamamoto <b>569815</b></li>
+            </ul>
+          </article>
+        </div>
+        <p class="footnote">
+          Interface no navegador · Processamento em Python · Dados em memória
+        </p>
+      </section>
+      <section id="painel" class="page" hidden>
+        <div class="heading">
+          <div>
+            <p class="eyebrow">OPERAÇÃO DA ESTAÇÃO</p>
+            <h1>Sessões de recarga</h1>
+          </div>
+          <button id="nova" class="primary">+ Nova sessão</button>
+        </div>
+        <div id="stats" class="stats"></div>
+        <div class="toolbar">
+          <form id="search">
+            <label for="busca">Buscar por ID</label
+            ><input
+              id="busca"
+              type="number"
+              min="1"
+              placeholder="Ex.: 10"
+              required
+            /><button>Buscar</button>
+          </form>
+          <label for="criterio">Ordenar por</label
+          ><select id="criterio">
+            <option value="1">ID</option>
+            <option value="2">Energia</option>
+            <option value="3">Custo</option>
+            <option value="4">Tempo</option></select
+          ><select id="direcao" aria-label="Direção">
+            <option value="true">Crescente</option>
+            <option value="false">Decrescente</option></select
+          ><button id="ordenar">Ordenar</button>
+        </div>
+        <p id="feedback" role="status">Cadastre sessões para começar.</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Veículo</th>
+                <th>Carregador</th>
+                <th>Energia</th>
+                <th>Tempo</th>
+                <th>Custo</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="rows"></tbody>
+          </table>
+        </div>
+        <div class="heading summary">
+          <p>
+            Tarifação: energia (kWh) × tarifa (R$/kWh)<br /><small
+              >Registros em memória; reiniciar o servidor esvazia a
+              lista.</small
+            >
+          </p>
+          <button id="relatorio">Ver resumo final</button>
+        </div>
+        <article id="report" hidden></article>
+      </section>
+      <section id="codigo" class="page" hidden>
+        <p class="eyebrow">DEFESA TÉCNICA / FONTE EXECUTADA</p>
+        <h1>Por dentro do Python</h1>
+        <div class="code-tabs">
+          <button data-code="estrutura">Classe Sessao</button
+          ><button data-code="integracao">Cadastro e integração</button
+          ><button data-code="busca">Busca sequencial</button
+          ><button data-code="ordenacao">Insertion Sort</button
+          ><button data-code="estatisticas">Estatísticas</button>
+        </div>
+        <p id="code-note"></p>
+        <pre><code id="source"></code></pre>
+        <p class="footnote">
+          Trecho lido diretamente das funções Python utilizadas pelo servidor.
+        </p>
+      </section>
+      <section id="analise" class="page" hidden>
+        <p class="eyebrow">ANÁLISE / CRESCIMENTO DAS OPERAÇÕES</p>
+        <h1>O que muda quando n aumenta?</h1>
+        <div class="grid two">
+          <article>
+            <span class="tag">BUSCA SEQUENCIAL</span>
+            <h2>O(n) no pior caso</h2>
+            <p>
+              Procura pelo ID, comparando um registro de cada vez. Termina ao
+              encontrar ou ao chegar ao fim da lista.
+            </p>
+            <div class="numbers">10 → 20 → 40</div>
+            <p>
+              Máximo de comparações para 10, 20 e 40 sessões. Dobrar n dobra
+              esse limite.
+            </p>
+          </article>
+          <article>
+            <span class="tag">INSERTION SORT</span>
+            <h2>O(n²) no pior caso</h2>
+            <p>
+              Em ordem inversa, cada item atravessa a parte já ordenada: n(n −
+              1)/2 deslocamentos.
+            </p>
+            <div class="numbers">45 → 190 → 780</div>
+            <p>
+              Deslocamentos para 10, 20 e 40 sessões em ordem inversa. Ao dobrar
+              n, aproxima-se de 4×.
+            </p>
+          </article>
+        </div>
+        <article class="complexity">
+          <p>
+            <b>O(1)</b> — multiplicar energia por tarifa; busca com acerto no
+            primeiro item.
+          </p>
+          <p>
+            <b>O(n)</b> — estatísticas; melhor caso do Insertion Sort, com a
+            lista já ordenada.
+          </p>
+          <p>
+            <b>O(log n) e O(n log n)</b> — não descrevem os algoritmos
+            implementados aqui. Busca binária e Merge Sort seriam alternativas
+            futuras, com requisitos próprios.
+          </p>
+        </article>
+      </section>
+      <section id="futuro" class="page" hidden>
+        <p class="eyebrow">ARQUITETURA / PRÓXIMOS PASSOS</p>
+        <h1>Uma interface, um backend.</h1>
+        <div class="flow">
+          <span>Navegador<br /><small>formulários / ações</small></span
+          ><b>→</b><span>HTTP + JSON<br /><small>requisição</small></span
+          ><b>→</b><span>Python<br /><small>objetos / algoritmos</small></span
+          ><b>→</b><span>Resultado<br /><small>volta à interface</small></span>
+        </div>
+        <div class="grid two">
+          <article>
+            <h2>01 · Persistência</h2>
+            <p>
+              Adicionar um banco de dados para preservar o histórico após
+              reiniciar o servidor. Hoje as sessões vivem em uma lista de
+              objetos em memória.
+            </p>
+          </article>
+          <article>
+            <h2>02 · Múltiplas estações</h2>
+            <p>
+              Relacionar cada sessão a uma estação e consolidar consumo e
+              receita por local. Integração com carregadores reais seria uma
+              etapa posterior.
+            </p>
+          </article>
+        </div>
+        <p class="lead">
+          Sistema demonstrado: cadastro, listagem, busca, ordenação manual,
+          estatísticas, tarifação e resumo.
+        </p>
+        <p class="footnote">
+          Evoluções propostas — não implementadas nesta Sprint.
+        </p>
+      </section>
+    </main>
+    <dialog id="modal">
+      <form id="cadastro">
+        <div class="heading">
+          <h2>Nova sessão de recarga</h2>
+          <button type="button" id="fechar" aria-label="Fechar">×</button>
+        </div>
+        <div class="fields">
+          <label>ID<input name="id" type="number" min="1" required /></label
+          ><label>Veículo<input name="veiculo" maxlength="60" required /></label
+          ><label
+            >Carregador<select name="tipo_carregador">
+              <option>Lento - 7,4 kW</option>
+              <option>Rápido - 22 kW</option>
+              <option>Ultrarrápido - 50 kW</option>
+            </select></label
+          ><label>Data<input name="data" type="date" required /></label
+          ><label
+            >Energia (kWh)<input
+              name="energia_kwh"
+              type="number"
+              min="0"
+              max="1000000"
+              step="any"
+              required /></label
+          ><label
+            >Tempo (min)<input
+              name="tempo_minutos"
+              type="number"
+              min="0"
+              max="1000000"
+              step="any"
+              required /></label
+          ><label
+            >Tarifa (R$/kWh)<input
+              name="tarifa_kwh"
+              type="number"
+              min="0"
+              max="1000000"
+              step="any"
+              required /></label
+          ><label
+            >Status<select name="status">
+              <option>Finalizada</option>
+              <option>Em andamento</option>
+            </select></label
+          >
+        </div>
+        <p id="form-error" role="alert"></p>
+        <button class="primary" type="submit">
+          Cadastrar e calcular custo
+        </button>
+        <p class="footnote">O custo será calculado pelo backend Python.</p>
+      </form>
+    </dialog>
+    <script src="/app.js"></script>
+  </body>
+</html>
