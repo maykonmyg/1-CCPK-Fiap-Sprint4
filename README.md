@@ -1,6 +1,6 @@
 # LightWeek — Sprint 4
 
-Continuação da Sprint 3 de Data Structures and Algorithms, turma 1CCPK.
+Continuação da Sprint 3 turma 1CCPK.
 
 ## Como abrir
 
